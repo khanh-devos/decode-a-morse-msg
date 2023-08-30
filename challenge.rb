@@ -24,31 +24,29 @@ CODE_MORSE = {
   '.--' => 'W',
   '-..-' => 'X',
   '-.--' => 'Y',
-  '--..' => 'Z',
-}
+  '--..' => 'Z'
+}.freeze
 
 def decode_char(character)
-    return CODE_MORSE[character]
+  CODE_MORSE[character]
 end
 
 puts decode_char('.-')
 
 def decode_word(word)
-    res = ''
-    word.split(' ').each {|a| res += CODE_MORSE[a]}
-    return res
+  res = ''
+  word.split.each { |a| res += CODE_MORSE[a] }
+  res
 end
 
-puts decode_word("-- -.--")
+puts decode_word('-- -.--')
 
 def decode_msg(msg)
-    words = msg.split('  ')
-    res = ''
-    words.each {|word| res += decode_word(word) + ' '}
-    return res
+  words = msg.split('  ')
+  res = ''
+  words.each { |word| res += "#{decode_word(word)} " }
+  res
 end
 
-puts decode_msg("-- -.--   -. .- -- .")
+puts decode_msg('-- -.--   -. .- -- .')
 puts decode_msg '.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...'
-
-
