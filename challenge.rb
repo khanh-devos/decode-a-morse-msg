@@ -41,12 +41,12 @@ end
 
 puts decode_word("-- -.--")
 
-# def decode_msg(msg)
-#     words = msg.split('  ')
-#     res = ''
-#     words.each {|word| res += decode_word(word) + ' '}
-#     return res
-# end
+def decode_msg(msg)
+    words = msg.split('  ')
+    res = ''
+    words.each {|word| res += decode_word(word) + ' '}
+    return res
+end
 
 puts decode_msg("-- -.--   -. .- -- .")
 puts decode_msg '.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...'
